@@ -21,8 +21,8 @@ Change your internal DNS redirects to ensure that `www.msftncsi.com` points to t
 If your running an internal DNS server like AdGuard, you should also ensure that the following records exist:
 
 - `dns.msftncsi.com` resolves to `131.107.255.255`
-- `clients3.google.com` resolves to your container
 - `www.msftncsi.com` resolves to your container
+- `clients3.google.com` resolves to your container
 - `connectivitycheck.gstatic.com` resolves to your container
 
 ![DNS Configuration](docs/dns-configuration.png)
@@ -44,3 +44,7 @@ The order of events appears to be slightly different depending on whether the wi
 ### Android / Chromium
 
 Shill, the connection manager for Chromium OS, attempts to detect services that are within a captive portal whenever a service transitions to the ready state. This determination of being in a captive portal or being online is done by attempting to retrieve the webpage `http://clients3.google.com/generate_204`. This well known URL is known to return an empty page with an HTTP status 204. If for any reason the web page is not returned, or an HTTP response other than 204 is received, then shill marks the service as being in the portal state.
+
+### iOS
+
+> The URL that needs to be replicated is captive.apple.com/hotspot-detect.html, and it needs to respond with a 200 and exactly the following content: "<HTML><HEAD><TITLE>Success</TITLE></HEAD><BODY>Success</BODY></HTML>"
