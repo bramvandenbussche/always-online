@@ -12,7 +12,7 @@ class Handler(BaseHTTPRequestHandler):
 
     def do_GET(self):
         # curl http://<ServerIP>/index.html
-        if self.path == "/" | self.path == "/ncsi.txt":
+        if self.path == "/" or self.path == "/ncsi.txt":
             # Respond with the file contents.
             self.send_response(200)
             self.send_header("Content-type", "text/html")
