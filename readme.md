@@ -22,8 +22,8 @@ If your running an internal DNS server like AdGuard, you should also ensure that
 
 - `dns.msftncsi.com` resolves to `131.107.255.255`
 - `clients3.google.com` resolves to your container
-- `connectivitycheck.gstatic.com` resolves to your container
 - `www.msftncsi.com` resolves to your container
+- `connectivitycheck.gstatic.com` resolves to your container
 
 ![DNS Configuration](docs/dns-configuration.png)
 
