@@ -1,0 +1,7 @@
+
+services:
+  fake-online-check:
+    # image: bramvandenbussche/online-check:latest
+    build: ./
+    ports:
+      - 8040:80
